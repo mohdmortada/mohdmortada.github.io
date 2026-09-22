@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concepts | Mohammad Mortada</title>
+<meta name="description" content="Website redesigns, brand concepts and small business tools by Mohammad Mortada, Chartered Marketer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --petrol-900:#022933;
+  --petrol-800:#03323F;
+  --petrol-700:#054353;
+  --petrol-600:#0A5566;
+  --aqua:#29FFF2;
+  --coral:#FF6F61;
+  --coral-dark:#E85A4C;
+  --light:#F5F5F5;
+  --white:#FFFFFF;
+  --ink:#333333;
+  --muted:#5E6B6E;
+  --serif:"Prata", "Playfair Display", Georgia, serif;
+  --sans:"Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono:"Space Mono", "Courier New", monospace;
+  box-sizing:border-box;
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 96px)}
+body{margin:0;background:var(--light);color:var(--ink);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+
+/* Floating pill nav, as on the main site */
+.nav-shell{position:fixed;top:calc(env(safe-area-inset-top,0px) + 16px);left:0;right:0;z-index:30;padding:0 clamp(16px,4vw,40px)}
+.nav{max-width:1100px;margin:0 auto;background:var(--white);border-radius:12px;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;box-shadow:0 6px 24px rgba(2,41,51,.18)}
+.nav .name{font:400 20px var(--serif);text-decoration:none;color:var(--petrol-900)}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:14px;font-weight:500}
+.nav ul a{text-decoration:none;color:var(--petrol-900)}
+.nav ul a:hover{color:var(--coral)}
+.nav .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--coral);margin-left:6px;vertical-align:middle}
+@media (max-width:640px){.nav ul li:not(:last-child){display:none}}
+
+/* Hero */
+.hero{background:radial-gradient(120% 90% at 50% 0%,var(--petrol-700) 0%,var(--petrol-800) 45%,var(--petrol-900) 100%);color:var(--white);text-align:center;padding:calc(env(safe-area-inset-top,0px) + clamp(150px,18vw,210px)) 0 clamp(80px,10vw,120px);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(41,255,242,.08) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(to bottom,transparent,#000 40%,transparent);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 40%,transparent);pointer-events:none}
+.hero h1{font:400 clamp(40px,6vw,72px)/1.12 var(--serif);margin:0 auto 22px;max-width:19ch;position:relative;z-index:1}
+.hero h1 span{display:block;color:var(--aqua)}
+.hero p{max-width:58ch;margin:0 auto 34px;color:rgba(255,255,255,.82);font-size:clamp(15px,1.3vw,17px);position:relative;z-index:1}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--coral);color:var(--white);font:600 14px var(--sans);text-decoration:none;padding:12px 14px 12px 22px;border-radius:8px;transition:background .2s,transform .2s;position:relative;z-index:1}
+.btn:hover{background:var(--coral-dark)}
+.btn i{width:22px;height:22px;border-radius:50%;border:1.5px solid rgba(255,255,255,.9);display:grid;place-items:center}
+.btn i svg{width:10px;height:10px;stroke:#fff;fill:none;stroke-width:2.4}
+.btn-ghost{background:transparent;color:var(--petrol-900);border:1.5px solid var(--petrol-900)}
+.btn-ghost:hover{background:var(--petrol-900);color:var(--white)}
+.btn-ghost i{border-color:currentColor}
+.btn-ghost i svg{stroke:currentColor}
+
+/* Marquee strip */
+.strip{background:var(--petrol-900);color:var(--white);overflow:hidden;border-top:1px solid rgba(255,255,255,.08);white-space:nowrap}
+.strip .track{display:inline-flex;gap:28px;padding:16px 0;animation:marquee 40s linear infinite;font-size:13px;font-weight:600}
+.strip .track span::after{content:"+";margin-left:28px;color:var(--aqua)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* Projects */
+.projects{padding:clamp(72px,9vw,120px) 0}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:12px}
+.head h2{font:400 clamp(32px,4vw,46px)/1.15 var(--serif);color:var(--ink);margin:0}
+.head a{font-size:13px;font-weight:600;color:var(--petrol-700);text-decoration:none}
+.head a:hover{color:var(--coral)}
+.sub{font:400 14px/1.7 var(--mono);color:var(--muted);margin:0 0 40px;max-width:70ch}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.card{position:relative;display:block;border-radius:14px;overflow:hidden;background:var(--petrol-800);color:var(--white);text-decoration:none;min-height:360px;isolation:isolate}
+.card.wide{grid-column:1/-1;min-height:420px}
+.card .shot{position:absolute;inset:0;z-index:-2;overflow:hidden;background:var(--petrol-700)}
+.card .shot iframe{position:absolute;top:0;left:0;width:1440px;height:1100px;border:0;transform-origin:0 0;pointer-events:none;filter:saturate(.9)}
+.card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(2,41,51,.92) 0%,rgba(2,41,51,.55) 45%,rgba(2,41,51,.9) 100%);transition:background .35s}
+.card:hover::before,.card:focus-visible::before{background:linear-gradient(180deg,rgba(2,41,51,.85) 0%,rgba(2,41,51,.2) 50%,rgba(2,41,51,.85) 100%)}
+.card .body{padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;height:100%;min-height:inherit}
+.card h3{font:600 clamp(22px,2.2vw,28px)/1.2 var(--sans);margin:0 0 14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;padding:0;list-style:none}
+.tags li{font-size:11px;font-weight:600;padding:4px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.35)}
+.tags li:first-child{background:var(--petrol-600);border-color:var(--petrol-600)}
+.tags li:last-child{background:var(--coral);border-color:var(--coral)}
+.card p{font:400 13px/1.75 var(--mono);color:rgba(255,255,255,.88);margin:0;max-width:52ch}
+.card .open{margin-top:auto;padding-top:28px;font:600 13px var(--sans);color:var(--aqua);display:flex;align-items:center;gap:10px}
+.card .open svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .25s}
+.card:hover .open svg{transform:translate(3px,-3px)}
+@media (max-width:760px){.grid{grid-template-columns:1fr}.card,.card.wide{min-height:340px}}
+
+/* CTA */
+.cta{background:var(--white);text-align:center;padding:clamp(72px,9vw,120px) 0}
+.cta small{display:block;font-size:13px;color:var(--muted);margin-bottom:14px}
+.cta h2{font:400 clamp(32px,4.6vw,52px)/1.2 var(--serif);max-width:20ch;margin:0 auto 32px;color:var(--ink)}
+.cta .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+/* Footer card */
+footer{padding:0 0 32px;background:var(--white)}
+.foot{background:linear-gradient(180deg,var(--petrol-800),var(--petrol-900));color:var(--white);border-radius:16px;padding:32px clamp(24px,3vw,40px) 28px}
+.foot-top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.14)}
+.foot-top .name{font:400 26px var(--serif);text-decoration:none}
+.social{display:flex;gap:10px}
+.social a{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center;transition:background .2s}
+.social a:hover{background:var(--coral)}
+.social svg{width:15px;height:15px;fill:#fff}
+.foot ul{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;list-style:none;margin:22px 0 0;padding:0;font-size:13px;font-weight:500}
+.foot ul a{text-decoration:none}
+.foot ul a:hover{color:var(--aqua)}
+.copy{text-align:center;font-size:12px;color:var(--muted);margin:22px 0 0}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="nav-shell">
+  <nav class="nav" aria-label="Main">
+    <a class="name" href="https://mohammadmortada.com/">Mohammad Mortada</a>
+    <ul>
+      <li><a href="https://mohammadmortada.com/">Home</a></li>
+      <li><a href="https://mohammadmortada.com/#services">Services</a></li>
+      <li><a href="#work">Concepts</a></li>
+      <li><a href="https://mohammadmortada.com/#contact">Contact<span class="dot" aria-hidden="true"></span></a></li>
+    </ul>
+  </nav>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Concepts built to test <span>what great could look like</span></h1>
+    <p>Unsolicited redesigns, brand concepts and small business tools. Each one starts with a real question about positioning, conversion or clarity, then answers it in working code.</p>
+    <a class="btn" href="#work">View the concepts <i aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 2v8M2.5 6.5 6 10l3.5-3.5"/></svg></i></a>
+  </div>
+</header>
+
+<div class="strip" aria-hidden="true">
+  <div class="track">
+    <span>Website redesign</span><span>Conversion-driven UX</span><span>Brand positioning</span><span>Business tools</span><span>GCC and MENA markets</span>
+    <span>Website redesign</span><span>Conversion-driven UX</span><span>Brand positioning</span><span>Business tools</span><span>GCC and MENA markets</span>
+  </div>
+</div>
+
+<main class="projects" id="work">
+  <div class="wrap">
+    <div class="head">
+      <h2>Concepts</h2>
+      <a href="https://github.com/mohdmortada">View on GitHub</a>
+    </div>
+    <p class="sub">Each concept is live and clickable. Open one to explore the full build.</p>
+
+    <div class="grid">
+      <a class="card wide" href="/deloitte-redesign/">
+        <div class="shot" data-src="/deloitte-redesign/"></div>
+        <div class="body">
+          <h3>Deloitte Middle East</h3>
+          <ul class="tags"><li>Strategy</li><li>UX Design</li><li>Web Design</li></ul>
+          <p>A centenary-led homepage for a firm in the region since 1926, with an interactive city network and clear paths for clients, readers and candidates.</p>
+          <span class="open">Open concept <svg viewBox="0 0 14 14"><path d="M4 10 10 4M5 4h5v5"/></svg></span>
+        </div>
+      </a>
+      <a class="card" href="/validation-calculator/">
+        <div class="shot" data-src="/validation-calculator/"></div>
+        <div class="body">
+          <h3>Validation Calculator</h3>
+          <ul class="tags"><li>Tool</li><li>Small Business</li></ul>
+          <p>Helps small businesses check whether an idea holds up before they put money behind it.</p>
+          <span class="open">Open tool <svg viewBox="0 0 14 14"><path d="M4 10 10 4M5 4h5v5"/></svg></span>
+        </div>
+      </a>
+      <a class="card" href="/shamaa-concept/">
+        <div class="shot" data-src="/shamaa-concept/"></div>
+        <div class="body">
+          <h3>Shamaa</h3>
+          <ul class="tags"><li>Brand</li><li>Web Design</li></ul>
+          <p>A concept website exploring a new digital presence for the Shamaa brand.</p>
+          <span class="open">Open concept <svg viewBox="0 0 14 14"><path d="M4 10 10 4M5 4h5v5"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</main>
+
+<section class="cta">
+  <div class="wrap">
+    <small>Like what you see? Let's apply the same thinking to your brand.</small>
+    <h2>Is it time to elevate your project to the next level?</h2>
+    <div class="row">
+      <a class="btn" href="https://mohammadmortada.com/#contact">Book a strategy call <i aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M3 9 9 3M4 3h5v5"/></svg></i></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-top">
+        <a class="name" href="https://mohammadmortada.com/">Mohammad Mortada</a>
+        <div class="social">
+          <a href="https://www.linkedin.com/in/mohdmortada" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zM9.5 9.75h3.8v1.5h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.6 4.77 6v5.55h-4V15.8c0-1.3-.02-2.98-1.82-2.98-1.82 0-2.1 1.42-2.1 2.88v5.05h-4z"/></svg></a>
+          <a href="https://github.com/mohdmortada" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a>
+        </div>
+      </div>
+      <ul>
+        <li><a href="https://mohammadmortada.com/">Home</a></li>
+        <li><a href="https://mohammadmortada.com/#services">Services</a></li>
+        <li><a href="#work">Concepts</a></li>
+        <li><a href="https://mohammadmortada.com/#contact">Contact</a></li>
+      </ul>
+    </div>
+    <p class="copy">Copyright © Mohammad Mortada 2026. Redesigns of existing brands are unofficial concepts and are not affiliated with or endorsed by those companies.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Live previews: load each concept into its card, scaled to fit
+  var shots=[].slice.call(document.querySelectorAll('.shot'));
+  function scale(){shots.forEach(function(s){var f=s.querySelector('iframe');if(f)f.style.transform='scale('+(s.clientWidth/1440)+')'})}
+  var load=function(s){if(s.querySelector('iframe'))return;var f=document.createElement('iframe');f.src=s.dataset.src;f.tabIndex=-1;f.setAttribute('aria-hidden','true');f.title='';f.loading='lazy';s.appendChild(f);scale()};
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){load(e.target);io.unobserve(e.target)}})},{rootMargin:'200px'});
+    shots.forEach(function(s){io.observe(s)});
+  } else shots.forEach(load);
+  window.addEventListener('resize',scale);
+})();
+</script>
+</body>
+</html>
